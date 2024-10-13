@@ -107,7 +107,7 @@ const JobPage = () => {
       </h2>
       <MDEditor.Markdown
         source={job?.requirements}
-        className="bg-transparent sm:text-lg lg:text-gray-400"
+        className="bg-transparent  text-white sm:text-lg lg:text-gray-400"
       />
       {job?.recruiter_id !== user?.id && (
         <ApplyJob

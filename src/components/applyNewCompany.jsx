@@ -65,7 +65,7 @@ const ApplyNewCompany = ({ fetchCompanies }) => {
 
   return (
     <Drawer>
-      <DrawerTrigger className="  ">
+      <DrawerTrigger >
         <Button
           type="button"
           size="sm"

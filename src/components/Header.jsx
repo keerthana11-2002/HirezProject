@@ -9,6 +9,7 @@ import {
 } from "@clerk/clerk-react";
 import { Button } from "./ui/button";
 import logo2 from "../assets/logo2.png";
+ 
 import { BriefcaseBusiness, Heart, PenBox } from "lucide-react";
 
 const Header = () => {
@@ -32,16 +33,17 @@ const Header = () => {
 
   return (
     <>
+    <div className="xl:ml-24">
       <nav className="py-4 flex justify-between items-center md:ml-20">
         <Link to="/">
           <img
             src={logo2}
-            className="h-16 md:h-32 md:-ml-20 sm:h-24 xl:ml-0 "
+            className="h-16 md:h-32 md:-ml-20 sm:h-24  "
             alt="Hirez Logo"
           />
         </Link>
 
-        <div className="flex gap-8 mr-5 xl:-mr-32  ">
+        <div className="flex gap-8 mr-5 xl:-mr-28   ">
           <SignedOut>
             <Button
               className="xl:text-2xl"
@@ -96,6 +98,7 @@ const Header = () => {
           />
         </div>
       )}
+      </div>
     </>
   );
 };

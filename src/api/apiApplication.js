@@ -55,9 +55,8 @@ export async function getApplications(token, { user_id }) {
 
   const { data, error } = await supabase
     .from("applications")
-    .eq("candidate_id", user_id)
-    .select("*,job:jobs(title,company:companies(name))");
-
+    .select("*,job:jobs(title,company:companies(name))")
+    .eq("candidate_id", user_id);
   if (error) {
     console.error("Error Fetching Application :", error);
     return null;

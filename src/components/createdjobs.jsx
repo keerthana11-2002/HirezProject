@@ -1,4 +1,4 @@
-import { getJobs } from "@/api/apijobs";
+import { getMyJobs } from "@/api/apijobs";
 import useFetch from "@/hooks/useFetch";
 import { useUser } from "@clerk/clerk-react";
 import { useEffect } from "react";
@@ -12,7 +12,7 @@ const CreatedJobs = () => {
     loading: loadingCreatedJobs,
     fn: fnCreatedJobs,
     data: createdJobs,
-  } = useFetch(getJobs, {
+  } = useFetch(getMyJobs, {
     recruiter_id: user.id,
   });
 
@@ -33,7 +33,7 @@ const CreatedJobs = () => {
               <JobCard
                 key={job.id}
                 job={job}
-                onJobSaved={fnCreatedJobs}
+                savedInit={job?.saved?.length > 0}
                 isMyjob
               />
             );
